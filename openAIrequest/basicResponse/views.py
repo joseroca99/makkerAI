@@ -45,7 +45,7 @@ def write_general_bio(request):
         if serializer.is_valid():
             serializer_data=serializer.validated_data
             #building prompt for AI
-            prompt= 'Write bio with the next information:\n'\
+            prompt= 'Write cover letter with the next information:\n'\
                 'first name: {}\n'\
                 'last name: {}\n'\
                 'date of birth: {}\n'\
