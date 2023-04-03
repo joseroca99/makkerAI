@@ -8,7 +8,7 @@ import openai
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 openai.organization = "org-k7JJucHwkXScCNUznzVQ7oet"
-with open(BASE_DIR / 'etc' / 'OPENAI_KEY.txt') as f:
+with open(BASE_DIR / 'etc' / 'OPENAI_KEY.py') as f:
     openai_api_key = f.read().strip()
         
 
