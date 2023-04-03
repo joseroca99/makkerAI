@@ -3,10 +3,13 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from basicResponse.serializers import AnswerSerializer
+from pathlib import Path
 import openai
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 openai.organization = "org-k7JJucHwkXScCNUznzVQ7oet"
-openai_api_key='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'
+with open(BASE_DIR / 'etc' / 'OPENAI_KEY.txt') as f:
+    openai_api_key = f.read().strip()
         
 
 # Create your views here.
@@ -18,7 +21,6 @@ def asking_to_gpt(request):
         serializer = AnswerSerializer(data=request.data)
         
         if serializer.is_valid():
-            print(serializer.validated_data)
             openai.api_key = openai_api_key
             openaiResponse = openai.Completion.create(
                         model="text-davinci-003",
