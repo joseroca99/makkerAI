@@ -20,6 +20,7 @@ from basicResponse import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('question/', views.asking_to_gpt, name='question')
+    path('question/', views.asking_to_gpt, name='question'),
+    path('bio/', views.write_general_bio, name='general_bio')
     
 ]
