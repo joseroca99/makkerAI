@@ -50,6 +50,8 @@ if selected =="LinkedIn Bio":
   left.image('img/bot1.png', )
   right.subheader("I've got the perfect idea for a bio. Please tell me what tone of voice do you want to use?")
   tov = right.text_input("Please write the tone of voice you want?")
+
+  #If you want to have all input fields showing all the time just remove the if statements and make them the same identation. 
   if tov:
     pushcontainers()
     left.image('img/bot2.png')
