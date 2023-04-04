@@ -12,9 +12,6 @@ def bioWriting(**serializer_data):
     prompt= 'Write bio with the next information:\n'\
         'first_name: {}\n'\
         'last_name: {}\n'\
-        'date_of_birth: {}\n'\
-        'phone_number: {}\n'\
-        'address_line: {}\n'\
         'tone: {}\n'\
         'strength: {}\n'\
         'email_address: {}\n'\
@@ -31,9 +28,6 @@ def bioWriting(**serializer_data):
         'The bio must have a {} tone and emphatize on {}.'.format(
             serializer_data['first_name'],
             serializer_data['last_name'],
-            serializer_data['date_of_birth'],
-            serializer_data['phone_number'],
-            serializer_data['address_line'],
             serializer_data['email_address'],
             serializer_data['tone'],
             serializer_data['strength']
