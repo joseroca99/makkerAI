@@ -36,15 +36,15 @@ def bioWriting(**serializer_data):
             serializer_data['address_line'],
             serializer_data['email_address'],
             serializer_data['tone'],
-            serializer_data['strength']
-            serializer_data['institution']
-            serializer_data['title']
-            serializer_data['level_of_education']
-            serializer_data['graduation_year']
-            serializer_data['skills']
-            serializer_data['company_name']
-            serializer_data['role']
-            serializer_data['work_duration']
+            serializer_data['strength'],
+            serializer_data['institution'],
+            serializer_data['title'],
+            serializer_data['level_of_education'],
+            serializer_data['graduation_year'],
+            serializer_data['skills'],
+            serializer_data['company_name'],
+            serializer_data['role'],
+            serializer_data['work_duration'],
             serializer_data['work_achievments']
         )
     try:
