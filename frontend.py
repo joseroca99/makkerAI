@@ -2,14 +2,14 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from streamlit_option_menu import option_menu
-from newAPI_test import generateBio, writeShorter
+from API import generateBio, writeShorter
 
 
 #Navbar assignment
 selected = option_menu(
   menu_title=None,
-  options=['LinkedIn Bio', 'Cover Letter', 'Resume'],
-  icons=["blockquote-left", "envelope", "file-earmark-person"],
+  options=['LinkedIn Bio', 'Cover Letter'],
+  icons=["blockquote-left", "envelope"],
   menu_icon="cast",
   default_index=0,
   orientation="horizontal"
@@ -46,7 +46,7 @@ if selected =="LinkedIn Bio":
     right.write('')
     right.write('')
     
-  left.image('https://i.imgur.com/H4f9t8E.png', )
+  left.image('https://i.imgur.com/H4f9t8E.png')
   right.subheader("I've got the perfect idea for a bio. Please tell me what tone of voice do you want to use?")
   tov = right.selectbox("Please input the tone of voice you want?", ('...','Professional', 'Informal', 'Enthusiastic', 'Neutral', 'Other'))
 
@@ -66,7 +66,7 @@ if selected =="LinkedIn Bio":
         pushcontainers()
         left.image('https://i.imgur.com/pgHUU2X.png')
         right.subheader('Nearly done, any sample bio you want to mimic?')
-        sample = right.text_input('LinkedIn bio you like.')
+        sample = right.text_input("LinkedIn bio you like.(Type 'N' for none)")
         if sample:
             pushcontainers()
             left.image('https://i.imgur.com/MK73xxW.png')
@@ -90,8 +90,41 @@ if selected =="LinkedIn Bio":
   
 
 if selected =="Cover Letter":
-  st.title("Cover Letter")
- 
+  st.title("AI Cover Letter Generator🚀")
   
-if selected =="Resume":
-  st.title("Resume Here")
+  with st.form(key='my_form_to_submit'):
+    st.subheader('Your Personal Information')
+    col1,col2 = st.columns(2)    
+    first_name = col1.text_input("👤FIRST NAME: ", placeholder="John")
+    last_name = col2.text_input("👤LAST NAME: ", placeholder="Doe")
+    col1,col2,col3 = st.columns(3)
+    email = col1.text_input("📧EMAIL ADDRESS ", placeholder="Johndoe@gmail.com")
+    desired_pos = col2.text_input("👨DESIRED POSITION", placeholder="Data Scientist")
+    experience = col3.number_input('💻YEARS of EXPERIENCE', 0, 25)
+    skills = col1.text_input('🦾 SKILLS:', placeholder='Python')
+    experience_level = col2.select_slider('EXPERIENCE LEVEL ', ['Fresh','Internee','Entry-Level', 'Junior', 'Senior'])
+    achievements = col3.text_input('🌟 ACHIEVEMENTS:', placeholder='Employee of the month') 
+    st.subheader('Company Information')
+    col1, col2, col3 = st.columns(3)
+    company_name = col1.text_input('🏢 COMPANY NAME:', placeholder='Company')
+    company_representative = col2.text_input('👨‍💼 COMPANY REPRESENTATIVE:', placeholder='Jane Doe')
+    company_email = col3.text_input("📧COMPANY EMAIL: ", placeholder="HR@company.com")
+    st.subheader('Cover Letter Specifics')
+    col1, col2 = st.columns(2)
+    option = col1.selectbox(
+    '💭SELECT TONE of VOICE',
+    ("Authoritative","Caring","Funny","Cheerful","Coarse","Conservative","Conversational","Casual","Dry", "Other"))
+    if option == "Other":
+       option = col1.text_input('Please specify...')
+    goodfit = col2.text_input("Why are you a good fit for the job?", placeholder="Let Tidy decide?(Leave Blank)")
+    st.write('')
+    st.write('')
+    submit_button = st.form_submit_button(label='GET COVER LETTER :robot_face:')
+
+  if submit_button:
+     #Here we write the generate cover letter function
+     pass
+
+  # prompt = ("Write a cover letter to " + contact_person + " from " + your_name +" for a " + role + " job at " + company_name +"." + " I have experience in " +personal_exp + " I am excited about the job because " +job_desc + " I am passionate about "+ passion)
+
+
