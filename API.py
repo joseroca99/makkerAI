@@ -3,7 +3,7 @@ import openai
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-with open(BASE_DIR / 'OPENAI_KEY.txt') as f:
+with open(BASE_DIR / 'OPENAI_KEY.py') as f:
     SECRET_KEY = f.read().strip()
 
 
