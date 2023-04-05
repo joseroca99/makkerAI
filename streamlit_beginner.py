@@ -5,7 +5,7 @@ import json
 import streamlit as st 
 from PIL import Image
 
-tidy_image = Image.open('tidy_mobile.png')
+#tidy_image = Image.open('tidy_mobile.png')
 
 
 
@@ -34,7 +34,7 @@ with st.form(key='my_form_to_submit'):
     '💭SELECT TONE of VOICE',
     ("Authoritative","Caring","Funny","Cheerful","Coarse","Conservative","Conversational","Casual","Dry"))
     st.write("Why are you a good fit for the job?")
-    st.image(tidy_image)
+    #st.image(tidy_image)
     submit_button = st.form_submit_button(label='Let Tidy Decide For Me')
     
 
