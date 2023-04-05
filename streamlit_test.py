@@ -83,7 +83,7 @@ if selected =="LinkedIn Bio":
               response = generateBio(list)
               if left.button('Want it Shorter?'): 
                 writeShorter(response)
-              right.code(response)
+              right.markdown(response)
               
                 
 
