@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import time
 from streamlit_option_menu import option_menu
 from API import generateBio, writeShorter, generateCL
 
@@ -77,7 +78,7 @@ if selected =="LinkedIn Bio":
             right.subheader('Last one, anything you want to emphasize?❗')
             emphasize = right.text_input('Skill or characteristic you want to emphasize')
             if emphasize:
-              list = [tov, info, sample, emphasize]
+              list = [tov, info, sample, emphasize] 
               left.write('')
               right.write('')
               right.write('')
@@ -126,15 +127,15 @@ if selected =="Cover Letter":
     list_for_check = list[:-1]
 
     if submit_button and option and not ('' in list_for_check):
-        st.write('')
-        st.write('')
-        st.write('')
-        st.write('')
-        st.image('https://i.imgur.com/tKBSrKn.png')
-        st.subheader("🎈Yuhuu we made it. Here's your Cover Letter🎈")
-        response = generateCL(list)
-        st.markdown(response)
-        #st.write("Sike Josee")
+        with st.spinner('Just a sec...'):
+          response = generateCL(list)
+          st.write('')
+          st.write('')
+          st.write('')
+          st.write('')
+          st.image('https://i.imgur.com/tKBSrKn.png')
+          st.subheader("🎈Yuhuu we made it. Here's your Cover Letter🎈")
+          st.markdown(response)
 
   # prompt = ("Write a cover letter to " + contact_person + " from " + your_name +" for a " + role + " job at " + company_name +"." + " I have experience in " +personal_exp + " I am excited about the job because " +job_desc + " I am passionate about "+ passion)
 
