@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from streamlit_option_menu import option_menu
-from API import generateBio, writeShorter
+from API import generateBio, writeShorter, generateCL
 
 
 #Navbar assignment
@@ -85,7 +85,7 @@ if selected =="LinkedIn Bio":
               left.image('https://i.imgur.com/tKBSrKn.png')
               right.subheader("🎈Yuhuu we made it. Here's your LinkedIn Bio🎈")
               response = generateBio(list)
-              right.code(response)
+              right.markdown(response)
               
                 
 
@@ -122,9 +122,19 @@ if selected =="Cover Letter":
     st.write('')
     st.write('')
     submit_button = st.form_submit_button(label='GET COVER LETTER 🤖')
+    list=[first_name,last_name,email,desired_pos,experience,skills,experience_level,achievements,company_name,company_representative,company_email,goodfit]
+    list_for_check = list[:-1]
 
-  if submit_button and option:
-      st.write("Sike Josee")
+    if submit_button and option and not ('' in list_for_check):
+        st.write('')
+        st.write('')
+        st.write('')
+        st.write('')
+        st.image('https://i.imgur.com/tKBSrKn.png')
+        st.subheader("🎈Yuhuu we made it. Here's your Cover Letter🎈")
+        response = generateCL(list)
+        st.markdown(response)
+        #st.write("Sike Josee")
 
   # prompt = ("Write a cover letter to " + contact_person + " from " + your_name +" for a " + role + " job at " + company_name +"." + " I have experience in " +personal_exp + " I am excited about the job because " +job_desc + " I am passionate about "+ passion)
 
