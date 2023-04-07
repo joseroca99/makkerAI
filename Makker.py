@@ -17,9 +17,9 @@ selected = option_menu(
 )
     
 with st.sidebar:
-  st.title('Meet Tidy 👋👋')
+  st.title('Meet Makker 👋👋')
   st.image('https://i.imgur.com/UCMEUwo.png', width=200)
-  st.subheader("TidyAI is your personal AI assistant for writing bios and cover letters. Project for Build your AI Startup Hackathon Episode 2")
+  st.subheader("MakkerAI is your personal AI assistant for writing bios and cover letters. Project for Build your AI Startup Hackathon Episode 2")
   code ='''hackathonParticipants =[
     Arianit Sylafeta,
     Manuel Palazzo,
@@ -119,7 +119,7 @@ if selected =="Cover Letter":
     ("Authoritative","Caring","Funny","Cheerful","Coarse","Conservative","Conversational","Casual","Dry", "Other"))
     if option == "Other":
        option = col1.text_input('Please specify...')
-    goodfit = col2.text_input("Why are you a good fit for the job?", placeholder="Let Tidy decide?(Leave Blank)")
+    goodfit = col2.text_input("Why are you a good fit for the job?", placeholder="Let Makker decide?(Leave Blank)")
     st.write('')
     st.write('')
     submit_button = st.form_submit_button(label='GET COVER LETTER 🤖')

@@ -73,7 +73,7 @@ def generateCL(input_values = []):
   {"role": "system", "content" : "You're a kind helpful assistant"},
   ]
   initial_prompt = ('Write me a Cover Letter with the next information:\n')
-  keys = ['\nfirst_name: ','\nlast_name: ','\nemail: ','\ndesired_pos: ','\nexperience years: ','\nskills: ','\nexperience_level: ','\nachievements: ','\ncompany_name: ','\ncompany_representative: ','\ncompany_email: ', '\nwhy I am a good fit (if empty, ignore): ']
+  keys = ['\nfirst_name: ','\nlast_name: ','\nemail: ','\ndesired_pos: ','\nexperience years: ','\nskills: ','\nexperience_level: ','\nachievements: ','\ncompany_name: ','\ncompany_representative: ','\ncompany_email: ', '\nwhy I am a good fit (if empty, it iss the AI job): ']
   input_with_keys = [varName+str(varContent) for varName,varContent in zip(keys,input_values)]
   
 
