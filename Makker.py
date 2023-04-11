@@ -78,14 +78,18 @@ if selected =="LinkedIn Bio":
             right.subheader('Last one, anything you want to emphasize?❗')
             emphasize = right.text_input('Skill or characteristic you want to emphasize')
             if emphasize:
-              list = [tov, info, sample, emphasize] 
+              tov = "tone of voice: " + tov + "\n"
+              info ="personal info:" + info + "\n"
+              sample = "sample: " + sample + "\n"
+              emphasize = "traits to emphasize: " + emphasize + "\n" 
+              list = [tov, info, sample, emphasize]
+              response = generateBio(list)
               left.write('')
               right.write('')
               right.write('')
               right.write('')
               left.image('https://i.imgur.com/tKBSrKn.png')
               right.subheader("🎈Yuhuu we made it. Here's your LinkedIn Bio🎈")
-              response = generateBio(list)
               right.markdown(response)
               
                 
