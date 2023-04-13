@@ -13,9 +13,9 @@ Project realized for [Build your AI Startup Hackathon Episode 2](https://lablab.
 
 A more detailed description of technology and use cases in available in [this presentation](MakkerAI.pdf).
 
-To try the demo just run `makker.py` with the command `streamlit run`
+To try the demo just run `Makker.py` with the command `streamlit run`
 ```
-  streamlit run makker.py
+  streamlit run Makker.py
 ```
 
 
