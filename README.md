@@ -7,5 +7,5 @@ The app takes care of designing the right prompt, so the AI generates content co
 
 Project realized for [Build your AI Startup Hackathon Episode 2](https://lablab.ai/event/ai-startup-hackathon-episode-2)
 
-![Screenshot homepage](hompage.png)
+![Screenshot homepage](homepage.png)
 
